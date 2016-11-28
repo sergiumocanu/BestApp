@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.bestapp">
+    
+    <uses-feature android:name="android.permission.CAMERA"
+        android:required="true"></uses-feature>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DisplayImage"></activity>
+        <activity android:name=".ColourCamera"
+            android:label="@string/colourcamera"
+            android:theme="@style/AppTheme"></activity>
+
+        <activity android:name=".FishEyeCamera"
+            android:label="@string/fisheyecamera"
+            android:theme="@style/AppTheme"></activity>
+
+        <activity android:name=".SelfieCamera"
+            android:label="@string/selfiecamera"
+            android:theme="@style/AppTheme"></activity>
+    </application>
+
+</manifest>
