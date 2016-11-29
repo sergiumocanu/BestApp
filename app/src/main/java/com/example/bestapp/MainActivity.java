@@ -1,5 +1,6 @@
 package com.example.bestapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
@@ -33,8 +34,7 @@ import com.google.atap.tangoservice.experimental.TangoImageBuffer;
 
 import java.io.File;
 
-public class MainActivity extends AppCompatActivity {
-    static final int REQUEST_CODE = 1;
+public class MainActivity extends Activity {
     ImageView image;
 
 
@@ -73,26 +73,6 @@ public class MainActivity extends AppCompatActivity {
         goToSelfieIntent.putExtra("callingSelfie", "MainActivity");
         startActivityForResult(goToSelfieIntent, result);
     }
-    private File getFile(){
-        File folder = new File("sdcard/camera_app");
-
-        if(!folder.exists()){
-            folder.mkdir();
-        }
-
-        File imagefile = new File(folder, "cam_image.jpg");
-        return imagefile;
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        String path = "sdcad/camera_app/cam_image.jpg";
-        image.setImageDrawable(Drawable.createFromPath(path));
-
-    }
-
-
-
 }
 
 
